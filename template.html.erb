@@ -1,0 +1,97 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <title>Planets Shipment Report</title>
+<style>
+h1 {
+  font-size: 26px;
+  text-align: center;
+}
+ img {
+ margin: 0 auto;
+ display:block;
+ }
+  footer p {
+
+     text-align: center;
+   }
+
+
+</style>
+
+</head>
+<body>
+  <h1> $<%= amount %> Week's Total.</h1>
+
+
+<table border ="1">
+  <table class="table table-bordered">
+
+  <thead>
+
+    <tr>
+      <th> Destination </th>
+      <th>Shipment</th>
+      <th>Crates</th>
+      <th>Money</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <%shipments.each {|logs| %>
+    <tr>
+       <td> <%= logs ["Destination"] %> </td>
+       <td><%= logs ["Shipment"] %></td>
+       <td><%= logs ["Crates"] %></td>
+       <td><%= logs ["Money"] %></td>
+    </tr>
+    <% } %>
+
+  </tbody>
+</table>
+
+</table>
+
+
+<table border ="1">
+  <table class="table table-hover">
+
+  <thead>
+
+    <tr>
+      <th> Name </th>
+      <th># Of Trips</th>
+      <th>Total_bonus</th>
+
+
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <%deliverer_log.each {|logs| %>
+    <tr>
+       <td> <%= logs ["Name"] %> </td>
+       <td><%= logs ["# Of Trips"] %></td>
+       <td><%= logs ["Total_bonus"] %></td>
+
+    </tr>
+    <% } %>
+
+  </tbody>
+</table>
+
+</table>
+
+
+
+
+
+</body>
+<footer><img src= "https://media1.giphy.com/media/1003S5f69g1ImA/200.gif"
+<p> We deliver all over the Galaxy...</p>
+</footer>
+</html>
